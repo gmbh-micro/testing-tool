@@ -1,0 +1,8 @@
+mode = ""
+
+[connecting]
+  name = "core"
+  args = ["--config=./ttool.toml", "--verbose"]
+  language = "go"
+  bin_path = "gmbhCore"
+  src_path = ""
