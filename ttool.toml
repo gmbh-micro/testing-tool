@@ -23,13 +23,14 @@ address = "localhost:49500" #default is localhost:49500
 keep_alive = "45s"
 #
 # Path to gmbhCore binary
-core_bin = "" #default is $GOPATH/bin/gmbhCore
+core_bin = ""   # default is $GOPATH/bin/gmbhCore
+                # Note cannot interpolate env vars in TOML
 
 ##################################################################################
 [procm]
 ##################################################################################
 # What address should the ProcM be started at
-address = "localhost:59500"
+address = "localhost:5900" #default is localhost:59500
 #
 # How long between keep alive messages
 keep_alive = "45s"
@@ -38,16 +39,53 @@ keep_alive = "45s"
 verbose = false
 #
 # Path to gmbhProcm binary
-procm_bin = "" #default is $GOPATH/bin/gmbhProcm
+procm_bin = ""  # default is $GOPATH/bin/gmbhProcm
+                # Note cannot interpolate env vars in TOML
+
 
 ##################################################################################
-[services]
+# Services # Holds the array of services to launch from the service launcher and
+############ start in managed mode.
 ##################################################################################
-# This directory will be scanned for subdirectories. The subdirectories will be 
-# scanned for service configuration files. When a config file is found, 
-# gmbhServiceLauncher will attempt to launch the service in managed mode
-services_directory = "services"
-#
-# Path to any other services for gmbhServiceLauncher to attach
-services = [""]
-#
+
+    [[service]]
+        args = [""]
+        env = [""]
+        language = ""
+        bin_path = "./services/c0/c0"
+        src_path = ""
+
+    [[service]]
+        args = [""]
+        env = [""]
+        language = ""
+        bin_path = "./services/c1/c1"
+        src_path = ""
+
+    [[service]]
+        args = [""]
+        env = [""]
+        language = ""
+        bin_path = "./services/c2/c2"
+        src_path = ""
+
+    [[service]]
+        args = [""]
+        env = [""]
+        language = ""
+        bin_path = "./services/c3/c3"
+        src_path = ""
+
+    [[service]]
+        args = [""]
+        env = [""]
+        language = ""
+        bin_path = "./services/c4/c4"
+        src_path = ""
+
+    [[service]]
+        args = [""]
+        env = [""]
+        language = ""
+        bin_path = "./services/webserver/ws"
+        src_path = ""

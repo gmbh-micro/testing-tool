@@ -1,0 +1,21 @@
+	                _                 
+  _  ._ _  |_  |_| /  | o  _  ._ _|_  
+ (_| | | | |_) | | \_ | | (/_ | | |_ 
+  _|                                  
+/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/webserver
+[gmbh] using core address from env=localhost:49500
+[gmbh] managed mode; ignoring siging; listening for sigusr2
+[gmbh] started, time=2019-02-21T19:26:15-06:00
+[gmbh] attempting to connect to gmbh-core
+[gmbh] Could not reach gmbh-core, trying again in 5 seconds
+[gmbh] registration details:
+[gmbh] id=106; address=localhost:49514; fingerprint=bhnkvf3mvbavqjauf9hg
+[gmbh] connected; coreAddress=(localhost:49514)
+[gmbh] <==0== target: c1, method: gatherData
+[gmbh]  ==0==> Responder:<Result:"hello from c1; returning same message; message=bhnkvibmvbavqj700v20" > 
+[gmbh] -> ping
+[gmbh] Shutdown procedures started in client from signal
+[gmbh] disconnecting from gmbh-core
+[gmbh] con exists; can send formal disconnect
+[gmbh] managed shutdown on return
+[gmbh] shutdown, time=2019-02-21T19:27:33-06:00

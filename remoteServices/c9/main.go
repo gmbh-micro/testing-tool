@@ -5,8 +5,12 @@ import (
 )
 
 func main() {
-	runtime := gmbh.SetRuntime(gmbh.RuntimeOptions{Blocking: true, Verbose: true})
-	client, err := gmbh.NewClient("./config.toml", runtime)
+
+	// runtime := gmbh.SetRuntime(gmbh.RuntimeOptions{Blocking: true, Verbose: true})
+	// standalone := gmbh.SetStandalone(gmbh.StandaloneOptions{CoreAddress: "localhost:49550"})
+	// service := gmbh.SetService(gmbh.ServiceOptions{Name: "ws"})
+
+	// client, err := gmbh.NewClient(runtime, standalone, service)
 	if err != nil {
 		panic(err)
 	}

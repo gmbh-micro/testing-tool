@@ -17,8 +17,11 @@ var client *gmbh.Client
 func main() {
 
 	runtime := gmbh.SetRuntime(gmbh.RuntimeOptions{Blocking: false, Verbose: true})
+	// standalone := gmbh.SetStandalone(gmbh.StandaloneOptions{CoreAddress: "localhost:49550"})
+	service := gmbh.SetService(gmbh.ServiceOptions{Name: "ws"})
+
 	var err error
-	client, err = gmbh.NewClient("./config.toml", runtime)
+	client, err = gmbh.NewClient(runtime, service)
 	if err != nil {
 		panic(err)
 	}

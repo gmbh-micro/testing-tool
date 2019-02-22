@@ -6,7 +6,9 @@ import (
 
 func main() {
 	runtime := gmbh.SetRuntime(gmbh.RuntimeOptions{Blocking: true, Verbose: true})
-	client, err := gmbh.NewClient("./config.toml", runtime)
+	// standalone := gmbh.SetStandalone(gmbh.StandaloneOptions{CoreAddress: "localhost:49550"})
+	service := gmbh.SetService(gmbh.ServiceOptions{Name: "c2"})
+	client, err := gmbh.NewClient(runtime, service)
 	if err != nil {
 		panic(err)
 	}

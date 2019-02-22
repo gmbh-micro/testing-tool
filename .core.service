@@ -1,8 +1,7 @@
-mode = ""
+# Automatically generated file
+fingerprint = ""
 
-[connecting]
-  name = "core"
-  args = ["--config=./ttool.toml", "--verbose"]
-  language = "go"
-  bin_path = "gmbhCore"
-  src_path = ""
+[[service]]
+args = ["--verbose","--config=./ttool.toml"]
+bin_path = "gmbhCore"
+
