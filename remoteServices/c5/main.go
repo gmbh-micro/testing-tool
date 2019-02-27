@@ -20,10 +20,13 @@ func main() {
 }
 
 func handleData(req gmbh.Request, resp *gmbh.Responder) {
+
 	data := req.GetPayload()
+
 	payload := gmbh.NewPayload()
 	payload.AppendStringField(
 		"result", fmt.Sprintf("hello from c5; returning same message; message=%s", data.GetStringField("xid")),
 	)
+
 	resp.SetPayload(payload)
 }
