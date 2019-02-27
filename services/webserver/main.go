@@ -36,6 +36,7 @@ func main() {
 	r.HandleFunc("/c2", handlec2)
 	r.HandleFunc("/c3", handlec3)
 	r.HandleFunc("/c4", handlec4)
+	r.HandleFunc("/c5", handlec5)
 
 	log.Fatal(http.ListenAndServe(":2020", r))
 }
@@ -52,58 +53,82 @@ func handleIndex(w http.ResponseWriter, r *http.Request) {
 }
 
 func handlec0(w http.ResponseWriter, r *http.Request) {
-	result, err := client.MakeRequest("c0", "gatherData", xid.New().String())
+
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("c0", "gatherData", payload)
 	if err != nil {
 		w.Write([]byte("could not contact; err=" + err.Error()))
 	}
-	if result.HadError {
-		w.Write([]byte("Service error: " + result.ErrorString + "\n"))
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
 	} else {
-		w.Write([]byte("c0 -> " + result.Result + "\n"))
+		w.Write([]byte("c0 -> " + result.GetPayload().GetStringField("result") + "\n"))
 	}
 }
 
 func handlec1(w http.ResponseWriter, r *http.Request) {
-	result, err := client.MakeRequest("c1", "gatherData", xid.New().String())
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("c1", "gatherData", payload)
 	if err != nil {
 		w.Write([]byte("could not contact; err=" + err.Error()))
 	}
-	if result.HadError {
-		w.Write([]byte("Service error: " + result.ErrorString + "\n"))
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
 	} else {
-		w.Write([]byte("c1 -> " + result.Result + "\n"))
+		w.Write([]byte("c1 -> " + result.GetPayload().GetStringField("result") + "\n"))
 	}
 }
 func handlec2(w http.ResponseWriter, r *http.Request) {
-	result, err := client.MakeRequest("c2", "gatherData", xid.New().String())
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("c2", "gatherData", payload)
 	if err != nil {
 		w.Write([]byte("could not contact; err=" + err.Error()))
 	}
-	if result.HadError {
-		w.Write([]byte("Service error: " + result.ErrorString + "\n"))
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
 	} else {
-		w.Write([]byte("c2 -> " + result.Result + "\n"))
+		w.Write([]byte("c2 -> " + result.GetPayload().GetStringField("result") + "\n"))
 	}
 }
 func handlec3(w http.ResponseWriter, r *http.Request) {
-	result, err := client.MakeRequest("c3", "gatherData", xid.New().String())
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("c3", "gatherData", payload)
 	if err != nil {
 		w.Write([]byte("could not contact; err=" + err.Error()))
 	}
-	if result.HadError {
-		w.Write([]byte("Service error: " + result.ErrorString + "\n"))
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
 	} else {
-		w.Write([]byte("c3 -> " + result.Result + "\n"))
+		w.Write([]byte("c3 -> " + result.GetPayload().GetStringField("result") + "\n"))
 	}
 }
 func handlec4(w http.ResponseWriter, r *http.Request) {
-	result, err := client.MakeRequest("c4", "gatherData", xid.New().String())
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("c4", "gatherData", payload)
 	if err != nil {
 		w.Write([]byte("could not contact; err=" + err.Error()))
 	}
-	if result.HadError {
-		w.Write([]byte("Service error: " + result.ErrorString + "\n"))
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
 	} else {
-		w.Write([]byte("c4 -> " + result.Result + "\n"))
+		w.Write([]byte("c4 -> " + result.GetPayload().GetStringField("result") + "\n"))
+	}
+}
+func handlec5(w http.ResponseWriter, r *http.Request) {
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("c5", "gatherData", payload)
+	if err != nil {
+		w.Write([]byte("could not contact; err=" + err.Error()))
+	}
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
+	} else {
+		w.Write([]byte("c5 -> " + result.GetPayload().GetStringField("result") + "\n"))
 	}
 }

@@ -1,0 +1,7 @@
+[[service]]
+args = []
+env = ["GMBHCORE=localhost:49500"]
+language = ""
+bin_path = "/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/remoteServices/c5/c5"
+src_path = ""
+

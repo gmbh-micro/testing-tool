@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/gmbh-micro/gmbh"
 )
 
@@ -17,5 +19,10 @@ func main() {
 }
 
 func handleData(req gmbh.Request, resp *gmbh.Responder) {
-	resp.Result = "rhello from c4; eturning same message; message=" + req.Data1
+	data := req.GetPayload()
+	payload := gmbh.NewPayload()
+	payload.AppendStringField(
+		"result", fmt.Sprintf("hello from c4; returning same message; message=%s", data.GetStringField("xid")),
+	)
+	resp.SetPayload(payload)
 }

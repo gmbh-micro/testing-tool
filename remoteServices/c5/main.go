@@ -1,12 +1,17 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/gmbh-micro/gmbh"
 )
 
 func main() {
+
 	runtime := gmbh.SetRuntime(gmbh.RuntimeOptions{Blocking: true, Verbose: true})
-	client, err := gmbh.NewClient("./config.toml", runtime)
+	service := gmbh.SetService(gmbh.ServiceOptions{Name: "c5"})
+
+	client, err := gmbh.NewClient(runtime, service)
 	if err != nil {
 		panic(err)
 	}
@@ -15,5 +20,10 @@ func main() {
 }
 
 func handleData(req gmbh.Request, resp *gmbh.Responder) {
-	resp.Result = "hello from c0; returning same message; message=" + req.Data1
+	data := req.GetPayload()
+	payload := gmbh.NewPayload()
+	payload.AppendStringField(
+		"result", fmt.Sprintf("hello from c5; returning same message; message=%s", data.GetStringField("xid")),
+	)
+	resp.SetPayload(payload)
 }

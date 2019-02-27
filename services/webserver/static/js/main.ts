@@ -1,5 +1,6 @@
 console.log("start")
 
+// @ts-ignore
 $(document).ready(function(){
     // $('.collapsible').collapsible();
     setDashboard();
