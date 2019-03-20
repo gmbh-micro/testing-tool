@@ -24,9 +24,9 @@ function setDashboard() {
         console.log("error=could not get main-content div");
         return;
     }
-    content.innerHTML = "\n    <h3>Testing Tool</h3>\n    \n    <div class=\"input-field\">\n    <input id=\"input_text\" type=\"text\" data-length=\"10\">\n    <label for=\"input_text\">number</label>\n    </div>\n    <a class=\"waves-effect waves-light btn grey\" onclick=\"runTest();\">test</a>\n    ";
+    content.innerHTML = "\n    <h3>Testing Tool</h3>\n    \n    <div class=\"input-field\">\n    <input id=\"input_text\" type=\"text\" data-length=\"10\">\n    <label for=\"input_text\">number</label>\n    </div>\n    <a class=\"waves-effect waves-light btn grey\" onclick=\"runTest(false);\">test</a>\n    <a class=\"waves-effect waves-light btn grey\" onclick=\"runTest(true);\">periodic</a>\n    ";
 }
-function runTest() {
+function runTest(again) {
     console.log("running test");
     var content = document.getElementById("main-content");
     if (content == null) {
@@ -37,7 +37,7 @@ function runTest() {
         content.appendChild(document.createElement('br'));
         content.appendChild(document.createElement('br'));
         var o = document.createElement('span');
-        o.innerHTML = "results";
+        o.innerHTML = "output";
         content.appendChild(o);
         content.appendChild(document.createElement('br'));
         var ta = document.createElement("textarea");
@@ -56,9 +56,9 @@ function runTest() {
     }
     var once = function (target, i, max) {
         var out = document.getElementById("output");
-        out.innerHTML += "(" + (i + 1) + "/" + max + ") contacting c0\n";
+        out.innerHTML += "(" + (i + 1) + "/" + max + ") contacting " + target + "\n";
         $.ajax({
-            method: "GET",
+            method: "POST",
             url: target,
         }).done(function (msg) {
             var out = document.getElementById("output");
@@ -79,7 +79,12 @@ function runTest() {
     catch (_a) {
         console.log("could not parse");
     }
+    var opts = ["c0", "c1", "c2", "c3", "c4"];
     for (var i = 0; i < max; i++) {
-        setTimeout(once, i * 10, "c0", i, max);
+        setTimeout(once, i * 10, opts[Math.floor(Math.random() * opts.length)], i, max);
+    }
+    if (again) {
+        console.log("running again in 15 seconds");
+        setTimeout(runTest, 15000, true);
     }
 }

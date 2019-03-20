@@ -49,11 +49,12 @@ function setDashboard(): void{
     <input id="input_text" type="text" data-length="10">
     <label for="input_text">number</label>
     </div>
-    <a class="waves-effect waves-light btn grey" onclick="runTest();">test</a>
+    <a class="waves-effect waves-light btn grey" onclick="runTest(false);">test</a>
+    <a class="waves-effect waves-light btn grey" onclick="runTest(true);">periodic</a>
     `;
 }
 
-function runTest(){
+function runTest(again){
     console.log("running test");
 
 
@@ -67,7 +68,7 @@ function runTest(){
         content.appendChild(document.createElement('br'));
         content.appendChild(document.createElement('br'));
         let o = document.createElement('span');
-        o.innerHTML = "results";
+        o.innerHTML = "output";
         content.appendChild(o);
         content.appendChild(document.createElement('br'));
     
@@ -89,9 +90,9 @@ function runTest(){
     var once = function(target: string, i: number,max: number){
 
         let out = document.getElementById("output");
-        out.innerHTML += "(" + (i+1) + "/" + max +") contacting c0\n";
+        out.innerHTML += "(" + (i+1) + "/" + max +") contacting "+target+"\n";
         $.ajax({
-            method: "GET",
+            method: "POST",
             url: target,
         }).done(function( msg ) {
             let out = document.getElementById("output");
@@ -115,7 +116,14 @@ function runTest(){
     } catch {
         console.log("could not parse");
     }
+
+    let opts = ["c0","c1","c2","c3","c4"];
     for(let i = 0; i < max; i++){
-        setTimeout(once, i * 10, "c0",i,max);
+        setTimeout(once, i * 10, opts[Math.floor(Math.random() * opts.length)],i,max);
+    }
+
+    if(again){
+        console.log("running again in 15 seconds");
+        setTimeout(runTest,15000,true)
     }
 }

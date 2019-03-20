@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"path"
 	"text/template"
+	"time"
 
 	"github.com/gmbh-micro/gmbh"
 	"github.com/gorilla/mux"
@@ -38,6 +39,7 @@ func main() {
 	r.HandleFunc("/c4", handlec4)
 	r.HandleFunc("/c5", handlec5)
 
+	http.DefaultClient.Timeout = time.Minute
 	log.Fatal(http.ListenAndServe(":2020", r))
 }
 
