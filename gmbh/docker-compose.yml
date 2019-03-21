@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+  node_procm:
+    image: "gmbh-img-procm"
+    environment:
+      - "HOSTNAME=node_procm"
+    env_file:
+      - gmbh.env
+ 
+  node_0:
+    image: "gmbh-img-core"
+    environment:
+      - "HOSTNAME=node_0"
+    env_file:
+      - gmbh.env
+
+  dashboard:
+    image: "gmbh-dashboard-image"
+    ports:
+      - "5001:5001"
+    logging:
+      driver: "none"
+
+    

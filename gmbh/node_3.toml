@@ -1,0 +1,23 @@
+# Automatically generated file
+# 
+# Services in this file (by directory) 
+# -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c4
+# -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/webserver
+#
+# Fingerprint - the id that refers to this cluster
+fingerprint = "jjog"
+
+[[service]]
+args = []
+env = ["GMBHCORE=localhost:49500"]
+language = ""
+bin_path = "/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c4/c4"
+src_path = ""
+
+[[service]]
+args = []
+env = ["GMBHCORE=localhost:49500"]
+language = ""
+bin_path = "/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/webserver/ws"
+src_path = ""
+
