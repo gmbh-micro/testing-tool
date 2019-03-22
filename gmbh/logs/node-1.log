@@ -968,3 +968,45 @@ log at /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/gmbh/logs/c0-stdout.log
 log at /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/gmbh/logs/c1-stdout.log
 [r102] service started with pid=41384
 [r102] service started with pid=41387
+[r102] [rpc] -> Request:"gmbh.shutdown" 
+[r102] sending graceful shutdown notices
+[r102] [rpc] -> Request:"core.shutdown" 
+[r102] removed 0/1 channels
+[r102] [remote] Shutdown procedures started in remote from procm
+[r102] disconnecting
+[r102] sending shutdown to s100
+[r102] sending shutdown to s101
+[r102] sending notify to core
+[r102] notice sent
+[r102] [remote] shutdown, time=Mar 21 12:14:13
+                      _                       
+  _  ._ _  |_  |_|   |_)  _  ._ _   _ _|_  _  
+ (_| | | | |_) | |   | \ (/_ | | | (_) |_ (/_ 
+  _|                                          
+[remote] started, time=Mar 21 16:22:07
+[remote] env=; ProcmAddress=localhost:59500; hostname=localhost
+[remote] remote is in managed mode; using sigusr2; ignoring sigusr1, sigint
+[remote] attempting to connect to core @ localhost:59500
+[remote] registration; id=r101; address=localhost:59506; fingerprint=bia00vrmvbaqhtuvff6g
+[r101] connected
+[r101] [rpc] -> Request:"gmbh.shutdown" 
+[r101] sending graceful shutdown notices
+[r101] added s100
+[r101] added s101
+log at /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/gmbh/logs/c0-stdout.log
+log at /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/gmbh/logs/c2-stdout.log
+[r101] added s102
+log at /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/gmbh/logs/c1-stdout.log
+[r101] service started with pid=43265
+[r101] service started with pid=43263
+[r101] service started with pid=43260
+[r101] [rpc] -> Request:"core.shutdown" 
+[r101] removed 0/1 channels
+[r101] [remote] Shutdown procedures started in remote from procm
+[r101] disconnecting
+[r101] sending shutdown to s101
+[r101] sending shutdown to s100
+[r101] sending shutdown to s102
+[r101] sending notify to core
+[r101] notice sent
+[r101] [remote] shutdown, time=Mar 21 16:22:11

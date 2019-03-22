@@ -24,7 +24,8 @@ RUN git clone https://github.com/gmbh-micro/gmbh.git \
     && git checkout containerBuild \
     && git fetch \
     && mkdir -p $GOPATH"/src/github.com/gmbh-micro" \ 
-    && cp -a ./internal/* $GOPATH"/src/github.com/gmbh-micro"/ 
+    && cp -a ./internal/* $GOPATH"/src/github.com/gmbh-micro"/ \
+    && cp -a ./pkg/* $GOPATH"/src/github.com/gmbh-micro"/
 
 WORKDIR $SRCDIR/gmbh
 
@@ -41,5 +42,5 @@ ADD ./ttool.toml ./
 
 EXPOSE 49500
 
-# CMD ["gmbhProcm", "--remote", "--config=./coreService.toml", "--verbose"]
-CMD ["gmbhProcm", "--remote", "--verbose"]
+CMD ["gmbhProcm", "--remote", "--config=./coreService.toml", "--verbose"]
+# CMD ["gmbhProcm", "--remote", "--verbose"]

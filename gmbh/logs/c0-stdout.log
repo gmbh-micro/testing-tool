@@ -37377,3 +37377,32 @@
 [gmbh] <- pong
 [gmbh] -> ping 2
 [gmbh] <- pong
+[gmbh] -> ping 3
+[gmbh] <- pong
+[gmbh] -> ping 4
+[gmbh] <- pong
+[gmbh] -> ping 5
+[gmbh] <- pong
+[gmbh] -> ping 6
+[gmbh] <- pong
+[gmbh] Shutdown procedures started in client from signal
+[gmbh] disconnecting from gmbh-core
+[gmbh] con exists; can send formal disconnect
+[gmbh] managed shutdown on return
+[gmbh] shutdown, time=2019-03-21T12:14:13-05:00
+                    _                 
+  _  ._ _  |_  |_| /  | o  _  ._ _|_  
+ (_| | | | |_) | | \_ | | (/_ | | |_ 
+  _|                                  
+[gmbh] service started from /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c0
+[gmbh] PeerGroup=universal
+[gmbh] using core address from env=localhost:49500
+[gmbh] managed mode; ignoring siging; listening for sigusr2
+[gmbh] started, time=2019-03-21T16:22:10-05:00
+[gmbh] attempting to connect to coreData
+[gmbh] Could not reach gmbh-core, trying again in 5 seconds
+[gmbh] Shutdown procedures started in client from signal
+[gmbh] disconnecting from gmbh-core
+[gmbh] con is nil
+[gmbh] managed shutdown on return
+[gmbh] shutdown, time=2019-03-21T16:22:11-05:00

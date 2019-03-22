@@ -13,6 +13,22 @@ services:
       - "HOSTNAME=node_0"
     env_file:
       - gmbh.env
+ 
+  node_1:
+    image: "gmbh-img-node_1"
+    environment:
+      - "HOSTNAME=node_1"
+    env_file:
+      - gmbh.env
+ 
+  node_2:
+    image: "gmbh-img-node_2"
+    ports:
+      - "2020:2020"
+    environment:
+      - "HOSTNAME=node_2"
+    env_file:
+      - gmbh.env
 
   dashboard:
     image: "gmbh-dashboard-image"

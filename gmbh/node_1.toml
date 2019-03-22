@@ -3,21 +3,29 @@
 # Services in this file (by directory) 
 # -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c0
 # -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c1
+# -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c2
 #
 # Fingerprint - the id that refers to this cluster
-fingerprint = "jjog"
+fingerprint = "0sa0"
 
 [[service]]
 args = []
-env = ["GMBHCORE=localhost:49500"]
+env = ["ADDR=node_1:49520"]
 language = ""
-bin_path = "/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c0/c0"
+bin_path = "/services/c0/c0"
 src_path = ""
 
 [[service]]
 args = []
-env = ["GMBHCORE=localhost:49500"]
+env = ["ADDR=node_1:49540"]
 language = ""
-bin_path = "/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c1/c1"
+bin_path = "/services/c1/c1"
+src_path = ""
+
+[[service]]
+args = []
+env = ["ADDR=node_1:49560"]
+language = ""
+bin_path = "/services/c2/c2"
 src_path = ""
 

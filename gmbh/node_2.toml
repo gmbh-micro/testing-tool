@@ -1,23 +1,31 @@
 # Automatically generated file
 # 
 # Services in this file (by directory) 
-# -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c2
 # -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c3
+# -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c4
+# -/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/webserver
 #
 # Fingerprint - the id that refers to this cluster
-fingerprint = "jjog"
+fingerprint = "0sa0"
 
 [[service]]
 args = []
-env = ["GMBHCORE=localhost:49500"]
+env = ["ADDR=node_2:49520"]
 language = ""
-bin_path = "/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c2/c2"
+bin_path = "/services/c3/c3"
 src_path = ""
 
 [[service]]
 args = []
-env = ["GMBHCORE=localhost:49500"]
+env = ["ADDR=node_2:49540"]
 language = ""
-bin_path = "/Users/abrahamdick/RailwayCabal/gmbh-testing-tool/services/c3/c3"
+bin_path = "/services/c4/c4"
+src_path = ""
+
+[[service]]
+args = []
+env = ["ADDR=node_2:49560"]
+language = ""
+bin_path = "/services/webserver/ws"
 src_path = ""
 

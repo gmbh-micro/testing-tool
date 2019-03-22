@@ -14,3 +14,14 @@ log at /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/gmbh/logs/ws-stdout.log
 log at /Users/abrahamdick/RailwayCabal/gmbh-testing-tool/gmbh/logs/c4-stdout.log
 [r103] service started with pid=41383
 [r103] service started with pid=41385
+[r103] [rpc] -> Request:"gmbh.shutdown" 
+[r103] sending graceful shutdown notices
+[r103] [rpc] -> Request:"core.shutdown" 
+[r103] removed 0/1 channels
+[r103] [remote] Shutdown procedures started in remote from procm
+[r103] disconnecting
+[r103] sending shutdown to s100
+[r103] sending shutdown to s101
+[r103] sending notify to core
+[r103] notice sent
+[r103] [remote] shutdown, time=Mar 21 12:14:13

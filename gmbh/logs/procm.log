@@ -2529,3 +2529,57 @@ version=0.9.5
 [rtr] checking pings
 [rtr] checking pings
 [rtr] checking pings
+[rtr] checking pings
+[rtr] checking pings
+[rtr] checking pings
+[rtr] checking pings
+[proc] SIGUSR1 reported
+[proc] gmbh shutdown initiated
+[proc] 4
+[proc] sending gmbh shutdown notice to r102
+[proc] sending gmbh shutdown notice to r103
+[proc] sending gmbh shutdown notice to r100
+[proc] sending gmbh shutdown notice to r101
+
+[proc] shutdown signal received
+[proc] sending shutdown notice to r100
+[proc] sending shutdown notice to r102
+[proc] sending shutdown notice to r103
+[proc] sending shutdown notice to r101
+[proc] shutdown; time=Mar 21 12:14:13
+                    _                 
+  _  ._ _  |_  |_| |_) ._ _   _ |\/| 
+ (_| | | | |_) | | |   | (_) (_ |  |  
+  _|                                  
+[proc] version=0.9.5
+[proc] env=; address=localhost:59500
+[proc] procm is in managed mode; overriding sigusr2; ignoring sigint
+[control] <- UpdateRegistration; serviceUpdate=Request:"remote.register" Message:"managed" 
+[proc] registering new remote
+[rtr] added new router to map=r100
+[rtr] attached new remote; id=r100; address=localhost:59504
+[control] <- UpdateRegistration; serviceUpdate=Request:"remote.register" Message:"managed" 
+[proc] registering new remote
+[rtr] added new router to map=r101
+[rtr] attached new remote; id=r101; address=localhost:59506
+[control] sent registration response
+[control] sent registration response
+[control] <- UpdateRegistration; serviceUpdate=Request:"remote.register" Message:"managed" 
+[proc] registering new remote
+[rtr] added new router to map=r102
+[rtr] attached new remote; id=r102; address=localhost:59508
+[control] sent registration response
+[proc] SIGUSR1 reported
+[proc] gmbh shutdown initiated
+[proc] 3
+[proc] sending gmbh shutdown notice to r100
+[proc] sending gmbh shutdown notice to r101
+[proc] sending gmbh shutdown notice to r102
+
+[proc] shutdown signal received
+[proc] sending shutdown notice to r102
+[proc] sending shutdown notice to r101
+[proc] sending shutdown notice to r100
+[proc] could not contact client; err=rpc error: code = Unavailable desc = transport is closing
+[proc] could not contact client; err=rpc error: code = Unavailable desc = transport is closing
+[proc] shutdown; time=Mar 21 16:22:11
