@@ -35,6 +35,4 @@ RUN go build -v -o ./bin/gmbh ./cmd/gmbh/*.go \
 
 WORKDIR /
 
-EXPOSE 59500
-
 CMD ["gmbhProcm"]
