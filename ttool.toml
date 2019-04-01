@@ -2,6 +2,8 @@
 ## gmbH Project
 ##################################################################################
 
+max_services_per_node = 1
+include_dashboard = true
 
 ##################################################################################
 [core]
@@ -20,7 +22,7 @@ daemom = false
 address = "localhost:49500" #default is localhost:49500
 #
 # How long between keep alive messages
-keep_alive = "45s"
+keep_alive = "55s"
 #
 # Path to gmbhCore binary
 core_bin = ""   # default is $GOPATH/bin/gmbhCore
@@ -49,43 +51,61 @@ procm_bin = ""  # default is $GOPATH/bin/gmbhProcm
 ##################################################################################
 
     [[service]]
+        id = "c0"
         args = [""]
         env = [""]
-        language = ""
+        language = "go"
         bin_path = "./services/c0/c0"
-        src_path = ""
+        src_path = "./services/c0"
+        has_makefile = true
+        ports = [""]
 
     [[service]]
+        id = "c1"
         args = [""]
         env = [""]
-        language = ""
+        language = "go"
         bin_path = "./services/c1/c1"
-        src_path = ""
+        src_path = "./services/c1"
+        has_makefile = true
+        ports = [""]
 
     [[service]]
+        id = "c2"
         args = [""]
         env = [""]
-        language = ""
+        language = "go"
         bin_path = "./services/c2/c2"
-        src_path = ""
+        src_path = "./services/c2"
+        has_makefile = true
+        ports = [""]
 
     [[service]]
+        id = "c3"
         args = [""]
         env = [""]
-        language = ""
+        language = "go"
         bin_path = "./services/c3/c3"
-        src_path = ""
+        src_path = "./services/c3"
+        has_makefile = true
+        ports = [""]
 
     [[service]]
+        id = "c4"
         args = [""]
         env = [""]
-        language = ""
+        language = "go"
         bin_path = "./services/c4/c4"
-        src_path = ""
+        src_path = "./services/c4"
+        has_makefile = true
+        ports = [""]
 
     [[service]]
+        id = "webserver"
         args = [""]
         env = [""]
-        language = ""
+        language = "go"
         bin_path = "./services/webserver/ws"
-        src_path = ""
+        src_path = "./services/webserver"
+        has_makefile = true
+        ports = ["2020"]

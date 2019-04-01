@@ -5,3 +5,5 @@ services/c3/c3
 services/c4/c4
 services/webserver/ws
 
+gmbh-deploy/
+gmbh/
