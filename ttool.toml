@@ -101,7 +101,7 @@ procm_bin = ""  # default is $GOPATH/bin/gmbhProcm
         ports = [""]
 
     [[service]]
-        id = "webserver"
+        id = "ws"
         args = [""]
         env = [""]
         language = "go"

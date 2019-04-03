@@ -3,7 +3,7 @@ console.log("start")
 // @ts-ignore
 $(document).ready(function(){
     setDashboard();
-    buildNav();
+    // buildNav();
 });
 
 var testSet = false
@@ -88,26 +88,21 @@ function runTest(again){
     }
 
     var once = function(target: string, i: number,max: number){
-
         let out = document.getElementById("output");
-        out.innerHTML += "(" + (i+1) + "/" + max +") contacting "+target+"\n";
+        let t = new Date();
         $.ajax({
             method: "POST",
             url: target,
         }).done(function( msg ) {
-            let out = document.getElementById("output");
-            out.innerHTML += msg;
+            let f = new Date()
+            let e = f - t;
+            out.innerHTML += "(" + (i+1) + "/" + max +") ["+target+"] ["+e+"ms] "+ msg;
+        }).fail(function(){
+            let f = new Date()
+            let e = f - t;
+            out.innerHTML += "FAILED (" + (i+1) + "/" + max +") ["+target+"] ["+e+"ms]";
         });
-
-        // var result = function(startTime) {
-        //     let out = document.getElementById("output");
-        //     out.innerHTML += msg;
-        // }
-        // var error = function(startTime) {
-        // }
     }
-
-
 
     let times = document.getElementById('input_text').value;
     let max = 500;

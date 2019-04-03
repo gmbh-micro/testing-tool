@@ -3,7 +3,7 @@ console.log("start");
 // @ts-ignore
 $(document).ready(function () {
     setDashboard();
-    buildNav();
+    // buildNav();
 });
 var testSet = false;
 var container = document.getElementById("container");
@@ -56,20 +56,19 @@ function runTest(again) {
     }
     var once = function (target, i, max) {
         var out = document.getElementById("output");
-        out.innerHTML += "(" + (i + 1) + "/" + max + ") contacting " + target + "\n";
+        var t = new Date();
         $.ajax({
             method: "POST",
             url: target,
         }).done(function (msg) {
-            var out = document.getElementById("output");
-            out.innerHTML += msg;
+            var f = new Date();
+            var e = f - t;
+            out.innerHTML += "(" + (i + 1) + "/" + max + ") [" + target + "] [" + e + "ms] " + msg;
+        }).fail(function () {
+            var f = new Date();
+            var e = f - t;
+            out.innerHTML += "FAILED (" + (i + 1) + "/" + max + ") [" + target + "] [" + e + "ms]";
         });
-        // var result = function(startTime) {
-        //     let out = document.getElementById("output");
-        //     out.innerHTML += msg;
-        // }
-        // var error = function(startTime) {
-        // }
     };
     var times = document.getElementById('input_text').value;
     var max = 500;

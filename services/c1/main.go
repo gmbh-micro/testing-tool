@@ -9,7 +9,7 @@ import (
 func main() {
 	runtime := gmbh.SetRuntime(gmbh.RuntimeOptions{Blocking: true, Verbose: true})
 	// standalone := gmbh.SetStandalone(gmbh.StandaloneOptions{CoreAddress: "localhost:49550"})
-	service := gmbh.SetService(gmbh.ServiceOptions{Name: "c1"})
+	service := gmbh.SetService(gmbh.ServiceOptions{Name: "c1", PeerGroups: []string{"universal", "internal"}})
 	client, err := gmbh.NewClient(runtime, service)
 	if err != nil {
 		panic(err)
