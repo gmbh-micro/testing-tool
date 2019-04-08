@@ -101,6 +101,28 @@ procm_bin = ""  # default is $GOPATH/bin/gmbhProcm
         ports = [""]
 
     [[service]]
+        id = "n1"
+        args = [""]
+        env = [""]
+        language = "node"
+        src_path = "./services/n1/"
+        has_makefile = false
+        ports = [""]
+        interpreter = "node"
+        entry_point = "./services/n1/main.js"
+
+    [[service]]
+        id = "n2"
+        args = [""]
+        env = [""]
+        language = "node"
+        src_path = "./services/n2/"
+        has_makefile = false
+        ports = [""]
+        interpreter = "node"
+        entry_point = "./services/n2/main.js"
+
+    [[service]]
         id = "ws"
         args = [""]
         env = [""]

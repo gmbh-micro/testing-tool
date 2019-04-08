@@ -112,7 +112,7 @@ function runTest(again){
         console.log("could not parse");
     }
 
-    let opts = ["c0","c1","c2","c3","c4"];
+    let opts = ["c0","c1","c2","c3","c4", "n1", "n2"];
     for(let i = 0; i < max; i++){
         setTimeout(once, i * 10, opts[Math.floor(Math.random() * opts.length)],i,max);
     }

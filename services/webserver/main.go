@@ -38,6 +38,8 @@ func main() {
 	r.HandleFunc("/c3", handlec3)
 	r.HandleFunc("/c4", handlec4)
 	r.HandleFunc("/c5", handlec5)
+	r.HandleFunc("/n1", handlen1)
+	r.HandleFunc("/n2", handlen2)
 
 	http.DefaultClient.Timeout = time.Minute
 	log.Fatal(http.ListenAndServe(":2020", r))
@@ -132,5 +134,33 @@ func handlec5(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Service error: " + result.GetError() + "\n"))
 	} else {
 		w.Write([]byte("c5 -> " + result.GetPayload().GetStringField("result") + "\n"))
+	}
+}
+
+func handlen1(w http.ResponseWriter, r *http.Request) {
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("n1", "gatherData", payload)
+	if err != nil {
+		w.Write([]byte("could not contact; err=" + err.Error()))
+	}
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
+	} else {
+		w.Write([]byte("n1 -> " + result.GetPayload().GetStringField("result") + "\n"))
+	}
+}
+
+func handlen2(w http.ResponseWriter, r *http.Request) {
+	payload := gmbh.NewPayload()
+	payload.AppendStringField("xid", xid.New().String())
+	result, err := client.MakeRequest("n2", "gatherData", payload)
+	if err != nil {
+		w.Write([]byte("could not contact; err=" + err.Error()))
+	}
+	if result.GetError() != "" {
+		w.Write([]byte("Service error: " + result.GetError() + "\n"))
+	} else {
+		w.Write([]byte("n2 -> " + result.GetPayload().GetStringField("result") + "\n"))
 	}
 }
