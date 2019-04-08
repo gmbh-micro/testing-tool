@@ -4,6 +4,7 @@ services/c2/c2
 services/c3/c3
 services/c4/c4
 services/n1/node_modules
+services/n2/node_modules
 services/webserver/ws
 
 gmbh-deploy/
