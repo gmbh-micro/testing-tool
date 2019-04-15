@@ -1,5 +1,4 @@
 var gmbh = require('gmbh');
-
 var client;
 
 function main(){
@@ -13,9 +12,10 @@ function main(){
         });
 }
 
-function gatherData(sender, request){
+async function gatherData(sender, request){
+    let a = request.get("xid");
     let retval = client.NewPayload();
-    retval.appendTextfields("result", `hello from n1; returning same message; message=${request.getTextfields('xid')}`)
+    retval.append("result", `hello from n1; returning same message; message=${a}`)
     return retval;
 }
 
